@@ -1,6 +1,6 @@
 import pytest
 
-from Task_1.bun import Bun
+from bun import Bun
 
 
 @pytest.mark.parametrize(
