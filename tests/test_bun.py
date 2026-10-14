@@ -4,15 +4,28 @@ from bun import Bun
 
 
 @pytest.mark.parametrize(
-    "name, price",
+    "name",
     [
-        ("black bun", 100),
-        ("white bun", 200),
-        ("red bun", 300),
+        "black bun",
+        "white bun",
+        "red bun",
     ],
 )
-def test_get_name_and_price(name, price):
-    bun = Bun(name, price)
+def test_get_name(name):
+    bun = Bun(name, 100)
 
     assert bun.get_name() == name
+
+
+@pytest.mark.parametrize(
+    "price",
+    [
+        100,
+        200,
+        300,
+    ],
+)
+def test_get_price(price):
+    bun = Bun("black bun", price)
+
     assert bun.get_price() == price
